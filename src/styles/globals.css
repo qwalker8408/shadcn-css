@@ -33,20 +33,6 @@ body {
   
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-image: linear-gradient(to bottom, hsl(var(--background)), hsl(208, 97%, 5%));
-    background-attachment:fixed;
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: linear-gradient(to bottom, hsl(var(--background)), hsl(360, 0%, 88%));
-    background-attachment:fixed;
-  }
-}
-
 /*
   6. Improve media defaults
 */

@@ -5,62 +5,62 @@
 /* The background color of the following component will be hsl(var(--primary)) 
 and the foreground color will be hsl(var(--primary-foreground)). */
 
-/* make sure there is no full stops */
+/* make sure there is no full stops or commas between the values */
+
+/* add more if you choose */
 
 :root {
   /* Your default theme */
-  --background: 215 35% 88%;
-  --background-secondary: 250 72% 67%;
-  --foreground: 207 95% 8%;
-  --muted: 206 93% 6%;
-  --muted-foreground: 206 93% 6%;
-  --card: 215 35% 88%;
-  --card-foreground: 206 93% 6%;
-  --popover: 221 94% 81%;
-  --popover-foreground: 206 93% 6%;
-  --border: 207 23% 48%;
-  --input: 207 68% 14%;
-  --primary: 215 35% 88%;
-  --primary-foreground: 207 95% 8%;
-  --secondary: 77 66% 9%;
-  --secondary-foreground: 77 66% 68%;
-  --accent: 221 94% 81%;
-  --accent-foreground: 207 71% 15%;
-  --destructive: 360 100% 54%;
-  --destructive-foreground: 336 23% 23%;
-  --warning:  14 91% 70%;
+  --background: 222.2 47.4% 11.2%;
+  --foreground: 0 0% 100%;
+  --muted: 215.4 16.3% 46.9%;
+  --muted-foreground: 210 40% 96.1%;
+  --card: 222.2 47.4% 11.2%;
+  --card-foreground: 0 0% 100%;
+  --popover: 222.2 47.4% 11.2%;
+  --popover-foreground: 0 0% 100%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 222.2 47.4% 11.2%;
+  --secondary-foreground: 210 40% 96.1%;
+  --accent: 222.2 47.4% 11.2%;
+  --accent-foreground: 210 40% 96.1%;
+  --destructive: 210 40% 98%;
+  --destructive-foreground: 0 100% 50%;
+  --warning: 14 91% 70%;
   --warning-foreground: 285 8% 20%;
   --success: 146 76% 49%;
   --success-foreground: 146 76% 13%;
-  --ring: 77 66% 68%;
+  --ring: 215 20.2% 65.1%;
   --radius: 0.5rem;
 }
 
 [data-theme='dark'] {
-  --background:  207 95% 8%;
-  --background-secondary: 250 72% 22%;
-  --foreground: 215 35% 88%;
-  --muted: 206 93% 6%;
-  --muted-foreground: 180 9% 43%;
-  --card: 206 93% 6%;
-  --card-foreground: 215 35% 88%;
-  --popover: 206 93% 6%;
-  --popover-foreground: 221 94% 81%;
-  --border: 207 23% 48%;
-  --input: 207 68% 14%;
-  --primary: 207 95% 8%;
-  --primary-foreground: 215 35% 88%;
-  --secondary: 77 66% 68%;
-  --secondary-foreground: 77 66% 9%;
-  --accent: 207 71% 15%;
-  --accent-foreground: 221 94% 81%;
-  --destructive: 336 23% 23%;
-  --destructive-foreground: 360 100% 54%;
+  --background:  0 0% 100%;
+  --foreground: 222.2 47.4% 11.2%;
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 47.4% 11.2%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 47.4% 11.2%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222.2 47.4% 11.2%;
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222.2 47.4% 11.2%;
+  --destructive: 0 100% 50%;
+  --destructive-foreground: 210 40% 98%;
   --warning: 285 8% 20%;
   --warning-foreground: 14 91% 70%;
   --success: 146 76% 13%;
   --success-foreground: 146 76% 49%;
-  --ring: 77 66% 68%;
+  --ring: 215 20.2% 65.1%;
   --radius: 0.5rem;
 }
 
