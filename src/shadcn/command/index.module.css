@@ -1,0 +1,156 @@
+.Command {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  background-color: hsl(var(--popover));
+  color: hsl(var(--popover-foreground));
+}
+
+.CommandDialog {
+  overflow: hidden; 
+  padding: 0;
+  box-shadow: 0 4px 12px hsl(var(--background) / 0.15); 
+}
+
+.CommandDialogCommand[cmdk-group-heading] {
+  padding-left: 0.5rem; 
+  font-weight: 500; 
+  color: hsl(var(--muted-foreground));
+}
+
+.CommandDialogCommand[cmdk-group]:not([hidden])_~[cmdk-group] {
+  padding-top: 0; 
+}
+
+.CommandDialogCommand[cmdk-group] {
+  padding-left: 0.5rem;
+}
+
+.CommandDialogCommand[cmdk-input-wrapper]_svg {
+  height: 1.25rem;
+  width: 1.25rem; 
+}
+
+.CommandDialogCommand[cmdk-input] {
+  height: 3rem; 
+}
+
+.CommandDialogCommand[cmdk-item] {
+  padding-left: 0.5rem; 
+  padding-top: 0.75rem; 
+}
+
+.CommandDialogCommand[cmdk-item]_svg {
+  height: 1.25rem; 
+  width: 1.25rem;
+}
+
+.CommandInput {
+  display: flex; 
+  align-items: center; 
+  border-bottom: 1px solid hsl(var(--border));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem; 
+}
+
+.CommandInputSearch {
+  margin-right: 0.5rem;
+  height: 1rem; 
+  width: 1rem; 
+  flex-shrink: 0; 
+  opacity: 0.5; 
+}
+
+.CommandInputInput {
+  display: flex;
+  height: 2.75rem; 
+  width: 100%; 
+  border-radius: 0.375rem; 
+  background-color: transparent; 
+  padding-top: 0.75rem; 
+  padding-bottom: 0.75rem; 
+  font-size: 0.875rem; 
+  outline: none; 
+  border: none;
+}
+
+.CommandInputInput::placeholder {
+  color: hsl(var(--muted-foreground)); 
+}
+
+.CommandInputInput:disabled {
+  cursor: not-allowed; 
+  opacity: 0.5; 
+}
+
+.CommandList {
+  max-height: 300px; 
+  overflow-y: auto; 
+  overflow-x: hidden; 
+}
+
+.CommandEmpty {
+  padding-top: 1.5rem; 
+  padding-bottom: 1.5rem; 
+  text-align: center; 
+  font-size: 0.875rem;
+}
+
+.CommandGroup {
+  overflow: hidden; 
+  padding: 0.25rem; 
+  color: hsl(var(--foreground));
+
+}
+
+.CommandGroup {
+  padding-left: 0.5rem; 
+  padding-top: 0.75rem; 
+  padding-bottom: 0.75rem;
+  font-size: 0.75rem; 
+  font-weight: 500; 
+  color: hsl(var(--muted-foreground)); 
+}
+
+.CommandSeparator {
+  margin-left: -0.25rem; 
+  margin-right: -0.25rem; 
+  height: 1px; 
+  background-color: hsl(var(--border)); 
+}
+
+.CommandItem {
+  position: relative;
+  display: flex; 
+  cursor: default; 
+  user-select: none; 
+  align-items: center; 
+  border-radius: 0.375rem; 
+  padding-left: 0.5rem; 
+  padding-right: 0.5rem; 
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; 
+  font-size: 0.875rem;
+  outline: none;
+  color: hsl(var(--foreground));
+}
+
+.CommandItem[aria-selected="true"] {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground)); 
+}
+
+.CommandItem[data-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5; 
+}
+
+.CommandShortcut {
+  margin-left: auto; 
+  font-size: 0.75rem; 
+  letter-spacing: 0.2em; 
+  color: hsl(var(--muted-foreground));
+}

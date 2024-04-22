@@ -1,0 +1,50 @@
+.Alert {
+  position: relative; 
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem; 
+  padding-left: 1rem;
+  padding-right: 1rem; 
+  border-radius: 0.5rem; 
+  width: 100%; 
+  font-size: 0.875rem;
+  line-height: 1.25rem; 
+  color: hsl(var(--foreground));
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+
+.Alert > svg {
+  position: absolute;
+  left: 0.875rem;
+  top: 0.875rem;
+}
+
+.Alert[variant = 'destructive'] {
+  border: 1px solid hsl(var(--destructive) / 0.5);
+}
+
+.Alert[variant = 'destructive'] > svg {
+  color: hsl(var(--destructive));
+}
+
+.Alert[variant = 'destructive'] .AlertTitle {
+  color: hsl(var(--destructive-foreground));
+}
+
+.Alert[variant = 'destructive'] .AlertDescription {
+  color: hsl(var(--destructive-foreground));
+}
+
+.AlertTitle {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  font-weight: 500; 
+  line-height: 1; 
+  letter-spacing: -0.02em;
+  padding-left: 1.75rem;
+}
+
+.AlertDescription {
+  line-height: 1.625;
+  padding-left: 1.75rem;
+}

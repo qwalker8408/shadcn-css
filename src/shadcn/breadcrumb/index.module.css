@@ -1,0 +1,51 @@
+.BreadcrumbList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.375rem; 
+  word-wrap: break-word; 
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  list-style: none;
+  padding-left: 0;
+}
+
+.BreadcrumbItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.BreadcrumbLink {
+  transition: color 0.3s ease;
+  color: hsl(var(--muted-foreground));
+}
+
+.BreadcrumbLink:hover {
+    color: hsl(var(--foreground) / 0.80);
+}
+
+.BreadcrumbPage {
+  font-weight: normal;
+  color: hsl(var(--foreground));
+}
+
+.BreadcrumbSeparator > svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.BreadcrumbEllipsis {
+  display: flex;
+  height: 2.25rem; 
+  width: 2.25rem; 
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+@media (min-width: 640px) {
+  .Breadcrumb {
+    gap: 0.625rem;
+  }
+}

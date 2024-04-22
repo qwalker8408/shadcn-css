@@ -1,0 +1,57 @@
+.AlertDialogOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.AlertDialogOverlay[data-state=open] {
+  animation: enter 1s;
+}
+
+.AlertDialogOverlay[data-state=closed] {
+  animation: exit 1s;
+  display: none;
+}
+
+.AlertDialogContent {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+  text-align: left;
+  width: 100%;
+  max-width: 32rem;
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: 0.5px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  background-color: hsl(var(--background));
+  box-shadow: 0 4px 12px hsl(var(--background) / 0.15);
+  transition: transform 0.2s ease; 
+}
+
+
+.AlertDialogHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.AlertDialogFooter {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 0.5rem;
+}
+
+.AlertDialogTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.AlertDialogDescription {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+}

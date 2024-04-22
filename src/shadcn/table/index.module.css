@@ -1,0 +1,75 @@
+.TableDiv {
+  position: relative; 
+  width: 100%; 
+  overflow: auto;
+}
+
+.Table {
+  width: 100%; 
+  caption-side: bottom;
+  font-size: 0.875rem;
+}
+
+.TableHeader {
+  border-bottom: 1px solid hsl(var(--border)); 
+}
+
+.TableBody {
+  border-bottom: none;
+}
+
+.TableFooter {
+  border-top: 1px solid hsl(var(--border));
+}
+
+.TableFooter tr {
+    background-color: hsl(var(--muted) / 0.50); 
+    font-weight: 500; 
+}
+
+.TableFooter tr:last-child {
+    border-bottom: none;
+}
+
+.TableRow {
+    border-bottom: 1px solid hsl(var(--border)); 
+    transition-property: background-color; 
+    transition-duration: 0.3s;
+
+    background-color: transparent;
+}
+
+.TableRow:hover {
+    background-color: hsl(var(--muted) / 0.50); 
+}
+
+.TableRow[data-state="selected"] {
+    background-color: hsl(var(--muted));
+}
+
+.TableHead {
+  height: 3rem; 
+  padding-left: 1rem; 
+  padding-right: 0; 
+  text-align: left; 
+  vertical-align: middle; 
+  font-weight: 500;
+  color: hsl(var(--muted-foreground)); 
+}
+
+.TableCell {
+    padding: 1rem; 
+    vertical-align: middle;
+}
+
+.TableCell:has([role="checkbox"]) {
+    padding-right: 0;
+}
+
+
+
+.TableCaption {
+    margin-top: 1rem; 
+    font-size: 0.875rem; 
+    color: hsl(var(--muted-foreground)); 
+}

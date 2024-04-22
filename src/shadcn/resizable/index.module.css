@@ -1,0 +1,60 @@
+.ResizablePanelGroup {
+    display: flex; 
+    height: 100%; 
+    width: 100%; 
+}
+
+.ResizablePanelGroup[data-panel-group-direction='vertical'] {
+    flex-direction: column; 
+}
+
+.ResizableHandle {
+    position: relative; 
+    display: flex; 
+    width: 1px; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: hsl(var(--border)); 
+    outline: none; 
+}
+
+.ResizableHandle::after {
+    position: absolute; 
+    inset: 0; 
+    left: 50%; 
+    width: 1px; 
+    transform: translateX(-50%); 
+}
+
+.ResizableHandle:focus-visible {
+    outline: 1px solid hsl(var(--ring)); 
+    outline-offset: 1px; 
+}
+
+.ResizableHandle[data-panel-group-direction='vertical'] {
+    height: 1px; 
+    width: 100%; 
+}
+
+.ResizableHandle[data-panel-group-direction='vertical']::after {
+    left: 0; 
+    height: 1px; 
+    width: 100%; 
+    transform: translateY(-50%); 
+}
+
+.ResizableHandle[data-panel-group-direction='vertical'] > div {
+    transform: rotate(90deg); 
+}
+
+.ResizableHandleWrapper {
+    z-index: 10; 
+    display: flex; 
+    height: 4px; 
+    width: 3px; 
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 0.25rem; 
+    border: 1px solid hsl(var(--border)); 
+    background-color: hsl(var(--border)); 
+}

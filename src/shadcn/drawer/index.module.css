@@ -1,0 +1,67 @@
+.DrawerOverlay {
+    position: fixed; 
+    top: 0; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    z-index: 50; 
+    background-color: hsl(var(--background) / 0.80);
+}
+
+.DrawerContent {
+    position: fixed; 
+    left: 0; 
+    right: 0;
+    bottom: 0; 
+    z-index: 50; 
+    margin-top: 6rem; 
+    display: flex; 
+    height: auto; 
+    flex-direction: column; 
+    border-radius: 0 0 10px 10px; 
+    border: 1px solid hsl(var(--border)); 
+    background-color: hsl(var(--background));
+}
+
+.DrawerContentDiv {
+    margin-left: auto;
+    margin-right: auto; 
+    margin-top: 1rem; 
+    height: 2px; 
+    width: 100px; 
+    border-radius: 50%; 
+    background-color: hsl(var(--muted)); 
+}
+
+.DrawerHeader {
+    display: grid; 
+    gap: 1.5rem;
+    padding: 1rem; 
+    text-align: center; 
+}
+
+@media (min-width: 640px) {
+    .DrawerHeader {
+        text-align: left;
+    }
+}
+
+.DrawerFooter {
+  margin-top: auto; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.5rem; 
+  padding: 1rem;
+}
+
+.DrawerTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1; 
+    letter-spacing: -0.025em;
+}
+
+.DrawerDescription {
+    font-size: 0.875rem; 
+    color: hsl(var(--muted-foreground)); 
+}

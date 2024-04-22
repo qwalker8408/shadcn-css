@@ -1,0 +1,39 @@
+.Avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  width: 2.5rem; 
+  flex-shrink: 0;
+  overflow: hidden; 
+  border-radius: 50%; 
+}
+.AvatarImage {
+  position: relative;
+  width: 100%; /* Occupy full width of the parent */
+}
+
+.AvatarImage::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.AvatarImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.AvatarFallback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: var(--muted);
+}

@@ -1,0 +1,185 @@
+.NavigationMenu {
+  position: relative; 
+  z-index: 10;
+  display: flex; 
+  max-width: max-content; 
+  flex: 1; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.NavigationMenuList {
+    display: flex;
+    flex: 1;
+    list-style: none; 
+    align-items: center; 
+    justify-content: center; 
+    margin-left: -0.25rem; 
+    margin-right: -0.25rem; 
+}
+
+.NavigationMenuList > * {
+    margin-left: 0.25rem; 
+    margin-right: 0.25rem;
+}
+
+.NavigationMenuTriggerChevronDown {
+    position: relative; 
+    top: 1px; 
+    margin-left: 0.25rem; 
+    height: 0.75rem; 
+    width: 0.75rem; 
+    transition-duration: 0.2s; 
+}
+
+.NavigationMenuTriggerChevronDown[data-state="open"] {
+    transform: rotate(180deg);
+}
+
+.NavigationMenuContent {
+    position: relative; /* Position the element relative to its normal position */
+    left: 0; /* Align the element flush with the left edge */
+    top: 0; /* Align the element flush with the top edge */
+    width: 100%; /* Set the width of the element to 100% */
+}
+
+/* Apply animation styles based on data attributes */
+.NavigationMenuContent[data-motion^="from-"],.NavigationMenuContent[data-motion$="animate-in"],
+.NavigationMenuContent[data-motion^="to-"],.NavigationMenuContent[data-motion$="animate-out"] {
+    animation: animate-in-out 0.3s ease forwards;
+}
+
+.NavigationMenuContent[data-motion^="from-"],.NavigationMenuContent[data-motion$="fade-in"],
+.NavigationMenuContent[data-motion^="to-"],.NavigationMenuContent[data-motion$="fade-out"] {
+    animation: fade-in-out 0.3s ease forwards;
+}
+
+.NavigationMenuContent[data-motion="from-end"] {
+    animation: slide-in-from-right 0.3s ease forwards;
+}
+
+.NavigationMenuContent[data-motion="from-start"] {
+    animation: slide-in-from-left 0.3s ease forwards;
+}
+
+.NavigationMenuContent[data-motion="to-end"] {
+    animation: slide-out-to-right 0.3s ease forwards;
+}
+
+.NavigationMenuContent[data-motion="to-start"] {
+    animation: slide-out-to-left 0.3s ease forwards;
+}
+
+@media (min-width: 768px) {
+    .NavigationMenuContent {
+        position: absolute; 
+        width:auto;
+    }
+  }
+
+.NavigationMenuViewportDiv {
+    position: absolute; 
+    left: 0; 
+    top: 100%; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.NavigationMenuViewport {
+    position: relative; 
+    margin-top: 1.5rem; 
+    height: var(--radix-navigation-menu-viewport-height); 
+    width: 100%; 
+    overflow: hidden; 
+    border-radius: var(--radix-radius-md); 
+    border: 1px solid var(--radix-border-color); 
+    background-color: var(--radix-popover-bg-color); 
+    color: var(--radix-popover-text-color); 
+    box-shadow: var(--radix-shadow-lg); 
+}
+
+.NavigationMenuViewport[data-state="open"] {
+    animation: animate-in 0.3s ease forwards;
+}
+
+.NavigationMenuViewport[data-state="closed"] {
+    animation: animate-out 0.3s ease forwards;
+}
+
+@media (min-width: 768px) {
+    .NavigationMenuViewport {
+        width: var(--radix-navigation-menu-viewport-width);
+        animation: zoom-in 0.3s ease forwards; 
+    }
+}
+
+.NavigationMenuIndicator {
+    position: relative; 
+    top: 100%; 
+    z-index: 1; 
+    display: flex; 
+    height: 1.5rem; 
+    align-items: flex-end; 
+    justify-content: center; 
+    overflow: hidden; 
+}
+
+.NavigationMenuIndicator[data-state="visible"] {
+    animation: animate-in 0.3s ease forwards;
+}
+
+.NavigationMenuIndicator[data-state="hidden"] {
+    animation: animate-out 0.3s ease forwards;
+}
+
+.NavigationMenuIndicatorDiv {
+    position: relative; 
+    top: 60%; 
+    height: 2px; 
+    width: 2px; 
+    transform: rotate(45deg); 
+    border-top-left-radius: 0.25rem; 
+    background-color: hsl(var(--border)); 
+    box-shadow: hsl(var(--background) / 0.50); 
+}
+
+.NavigationMenuTrigger {
+    display: inline-flex; 
+    height: 2.5rem; 
+    width: max-content;
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 0.375rem; 
+    background-color: var(--background); 
+    padding: 0.5rem 1rem; 
+    font-size: 0.875rem; 
+    font-weight: 500; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+    cursor: pointer; 
+    outline: none; 
+}
+
+.NavigationMenuTrigger:hover {
+    background-color: hsl(var(--accent)); 
+    color: hsl(var(--accent-foreground)); 
+}
+
+.NavigationMenuTrigger:focus {
+    background-color: hsl(var(--accent)); 
+    color: hsl(var(--accent-foreground)); 
+}
+
+/* Disabled styles */
+.NavigationMenuTrigger:disabled {
+    pointer-events: none; 
+    opacity: 0.5; 
+}
+
+/* Data attributes */
+.NavigationMenuTrigger[data-active="true"] {
+    background-color: hsl(var(--accent) / 0.5); 
+}
+
+.NavigationMenuTrigger[data-state="open"] {
+    background-color: hsl(var(--accent) / 0.5); 
+}

@@ -1,0 +1,14 @@
+.Separator {
+  flex-shrink: 0;
+  background-color: hsl(var(--border)); 
+}
+
+.SeparatorHorizontal {
+  height: 1px; 
+  width: 100%;
+}
+
+.SeparatorVertical {
+  height: 100%; 
+  width: 1px;
+}

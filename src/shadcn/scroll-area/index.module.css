@@ -1,0 +1,33 @@
+.ScrollArea {
+  position: relative; 
+  overflow: hidden; 
+}
+
+.ScrollAreaViewport {
+  height: 100%; 
+  width: 100%; 
+  border-radius: inherit;
+}
+
+.ScrollBar {
+  display: flex; 
+  touch-action: none; 
+  user-select: none; 
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+.ScrollBarVertical {
+  height: 100%; 
+  width: 2.5rem;
+  border-left: 1px solid transparent; 
+  padding: 1px; 
+}
+
+.ScrollBarHorizontal {
+    height: 2.5rem; 
+    display: flex; 
+    flex-direction: column;
+    border-top: 1px solid transparent; 
+    padding: 1px;
+}

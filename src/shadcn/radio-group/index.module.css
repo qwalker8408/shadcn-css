@@ -1,0 +1,42 @@
+.RadioGroup {
+    gap: 0.5rem; 
+}
+
+.RadioGroupItem {
+  width: 4rem; 
+  height: 4rem; 
+  aspect-ratio: 1 / 1; 
+  border-radius: 9999px; 
+  border-width: 1px; 
+  border-style: solid; 
+  border-color: hsl(var(--border)); 
+  color: hsl(var(--foreground)); 
+  background-color: hsl(var(--background)); 
+  outline: none;
+}
+
+/* Focus styles */
+.RadioGroupItem:focus {
+  outline: none; 
+  box-shadow: 0 0 0 2px hsl(var(--focus)), 0 0 0 4px hsl(var(--focus) / 0.50); 
+}
+
+/* Disabled styles */
+.RadioGroupItem:disabled {
+  cursor: not-allowed; 
+  opacity: 0.5; 
+}
+
+.RadioGroupItemIndicator {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.Circle {
+  height: 2.5rem; 
+  width: 2.5rem; 
+  fill: currentColor; 
+  color: hsl(var(--foreground)); 
+}
+

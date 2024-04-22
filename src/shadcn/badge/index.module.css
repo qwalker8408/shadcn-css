@@ -1,0 +1,54 @@
+.Badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px; 
+  border: 1px solid transparent; 
+  padding: 2px 1.25rem; 
+  font-size: 0.75rem;
+  font-weight: 600; 
+  outline: none; 
+  background-color: hsl(var(--foreground)); 
+  color: hsl(var(--background)); 
+  width: max-content;
+}
+
+.Badge:hover {
+  background-color: hsl(var(--foreground) / 0.80);
+}
+
+.Badge[data-variant='secondary'] {
+  border: 1px solid transparent; 
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  transition: background-color 0.3s ease; 
+}
+
+.Badge[data-variant='secondary']:focus {
+  border-width: 2px; 
+  border-color: hsl(var(--ring)); 
+  box-shadow: 0 0 0 3px hsl(var(--ring));
+}
+
+.Badge[data-variant='destructive'] {
+  border: 1px solid transparent; 
+  background-color: hsl(var(--destructive) / 0.9); 
+  color: hsl(var(--destructive-foreground));
+}
+
+.Badge[data-variant='destructive']:hover {
+  background-color: hsl(var(--destructive) / 0.80);
+}
+
+.Badge[data-variant='destructive']:focus {
+  background-color: hsl(var(--destructive));
+}
+
+.Badge[data-variant='outline'] {
+  color: hsl(var(--foreground));
+  background-color: transparent;
+  border: 1px solid hsl(var(--border) / 0.80);
+}
+
+.Badge[data-variant='outline']:hover {
+  background-color: hsl(var(--foreground)) / 0.10;
+}

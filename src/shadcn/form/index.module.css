@@ -1,0 +1,10 @@
+.FormDescription {
+  font-size: 0.875rem; 
+  color: hsl(var(--muted-foreground));
+}
+
+.FormMessage {
+   font-size: 0.875rem; 
+   font-weight: 500; 
+   color: hsl(var(--destructive-foreground));
+}

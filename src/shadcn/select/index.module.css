@@ -1,0 +1,188 @@
+.SelectTrigger {
+    display: flex;
+    height: 2.5rem; 
+    width: 100%; 
+    align-items: center; 
+    justify-content: space-between;
+    border-radius: 0.375rem; 
+    border: 1px solid hsl(var(--border)); 
+    background-color: hsl(var(--background));
+    padding-left: 0.75rem; 
+    padding-right: 0.75rem; 
+    padding-top: 0.5rem; 
+    padding-bottom: 0.5rem; 
+    font-size: 0.875rem; 
+    outline: none; 
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: hsl(var(--foreground));
+}
+
+.SelectTrigger::placeholder {
+    color: hsl(var(--muted-foreground));
+}
+
+.SelectTrigger:focus {
+    outline: none;
+    border-color: hsl(var(--ring)); 
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.50);
+}
+
+.SelectTrigger:disabled {
+    cursor: not-allowed;
+    opacity: 0.5; 
+}
+
+.SelectTrigger > span {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.5rem;
+}
+
+.SelectScrollUpButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    cursor: default;
+}
+
+.SelectScrollDownButton {
+    display: flex;
+    cursor: default;
+    align-items: center; 
+    justify-content: center; 
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+
+/* Base styles */
+.SelectContent {
+    position: relative;
+    z-index: 50;
+    max-height: 24rem; 
+    min-width: 8rem; 
+    overflow: hidden;
+    border-radius: 0.375rem; 
+    border: 1px solid hsl(var(--border)); 
+    background-color: hsl(var(--popover)); 
+    color: hsl(var(--popover-foreground));
+    box-shadow: 0 2px 4px hsl(var(--background) / 0.10);
+}
+
+/* Animation based on state */
+.SelectContent[data-state="open"] {
+    animation-name: enter;
+}
+
+.SelectContent[data-state="closed"] {
+    animation-name: exit;
+}
+
+/* Slide-in animations based on side */
+.SelectContent[data-side="bottom"] {
+    animation-name: slide-in-from-top;
+}
+
+.SelectContent[data-side="left"] {
+    animation-name: slide-in-from-right;
+}
+
+.SelectContent[data-side="right"] {
+    animation-name: slide-in-from-left;
+}
+
+.SelectContent[data-side="top"] {
+    animation-name: slide-in-from-bottom;
+}
+
+
+
+.SelectContentPopper {
+    transition: transform 0.3s ease; 
+    transform: translateY(0); 
+}
+
+.SelectContentPopper:hover {
+    transform: translateY(1px); 
+}
+
+.SelectContentPopper[data-side="left"]:hover {
+    transform: translateX(-1px);
+}
+
+.SelectContentPopper[data-side="right"]:hover {
+    transform: translateX(1px); 
+}
+
+.SelectContentPopper[data-side="top"]:hover {
+    transform: translateY(-1px);
+}
+
+.SelectPrimitiveViewport {
+  padding: '0.25rem'
+}
+
+.SelectPrimitiveViewportPopper {
+  height: var(--radix-select-trigger-height); 
+  width: 100%; 
+  min-width: var(--radix-select-trigger-width);
+
+}
+
+.SelectLabel {
+  color: hsl(var(--foreground));
+  padding-top: 0.375rem; 
+    padding-bottom: 0.375rem; 
+    padding-left: 2rem; 
+    padding-right: 0.5rem; 
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.SelectItem {
+    position: relative;
+    display: flex;
+    width: 100%;
+    cursor: default;
+    user-select: none; 
+    align-items: center;
+    border-radius: 0.25rem; 
+    padding-top: 0.375rem; 
+    padding-bottom: 0.375rem; 
+    padding-left: 2rem; 
+    padding-right: 0.5rem; 
+    font-size: 0.875rem; 
+    outline: none; 
+}
+
+.SelectItem:focus {
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+}
+
+.SelectItem[data-disabled="true"] {
+    pointer-events: none; 
+    opacity: 0.5;
+}
+
+.SelectItemSpan {
+    position: absolute;
+    left: 0.5rem; 
+    display: flex;
+    height: 0.875rem; 
+    width: 0.875rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.SelectSeparator {
+  margin-left: -1rem; 
+  margin-right: -1rem; 
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem; 
+  height: 1px; 
+  background-color: hsl(var(--muted));
+}

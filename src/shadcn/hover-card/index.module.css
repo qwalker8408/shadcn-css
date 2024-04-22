@@ -1,0 +1,39 @@
+/* Apply styles to the popover element */
+.HoverCardContent {
+    position: fixed; /* Position the popover relative to the viewport */
+    z-index: 50; /* Set the stacking order of the popover */
+    width: 16rem; /* Set the width of the popover (equivalent to w-64 in Tailwind) */
+    max-width: 64rem; /* Set the maximum width of the popover */
+    padding: 1rem; /* Set padding inside the popover */
+    border-radius: 0.375rem; /* Apply a medium border radius (equivalent to rounded-md in Tailwind) */
+    border: 1px solid #E5E7EB; /* Apply a border to the popover */
+    background-color: #F9FAFB; /* Set the background color of the popover (equivalent to bg-popover in Tailwind) */
+    color: #1F2937; /* Set the text color of the popover (equivalent to text-popover-foreground in Tailwind) */
+    box-shadow: 0 2px 4px rgba(15, 19, 23, 0.1), 0 8px 24px rgba(15, 19, 23, 0.2); /* Apply a shadow effect to the popover (equivalent to shadow-md in Tailwind) */
+    outline: none; /* Remove the outline when focused */
+}
+
+/* Animation and transition effects based on state and direction */
+.HoverCardContent[data-state="open"] {
+    animation: animateIn 0.3s ease-in-out forwards; /* Apply animation when popover is opened */
+}
+
+.HoverCardContent[data-state="closed"] {
+    animation: animateOut 0.3s ease-in-out forwards; /* Apply animation when popover is closed */
+}
+
+.HoverCardContent[data-side="bottom"] {
+    animation: slide-in-from-top 0.3s ease-in-out forwards;
+}
+
+.HoverCardContent[data-side="left"] {
+    animation: slide-in-from-right 0.3s ease-in-out forwards;
+}
+
+.HoverCardContent[data-side="right"] {
+    animation: slide-in-from-left 0.3s ease-in-out forwards;
+}
+
+.HoverCardContent[data-side="top"] {
+    animation: slide-in-from-bottom 0.3s ease-in-out forwards;
+}

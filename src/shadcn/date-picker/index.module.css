@@ -1,0 +1,6 @@
+.Button {
+  width: 280px; 
+  justify-content: flex-start; 
+  text-align: left;
+  font-weight: normal; 
+}

@@ -1,0 +1,178 @@
+.SheetOverlay {
+  position: fixed;
+  z-index: 50;
+  gap: 1rem; 
+  background-color: hsl(var(--background)); 
+  padding: 1.5rem; 
+  box-shadow: 0 4px 6px hsl(var(--background) / 0.10); 
+  transition: opacity 0.3s ease-in-out;
+}
+
+.SheetOverlay[data-state="open"] {
+  animation-name: animate-in;
+  animation-duration: 0.5s; 
+}
+
+.SheetOverlay[data-state="closed"] {
+  animation-name: animate-out;
+  animation-duration: 0.3s; 
+}
+
+.SheetContent {
+  position: fixed;
+  z-index: 50;
+  gap: 1rem; 
+  background-color: hsl(var(--background)); 
+  padding: 1.5rem; 
+  box-shadow: 0 4px 6px hsl(var(--background) / 0.10); 
+  transition: opacity 0.3s ease-in-out; 
+}
+
+.SheetContent[data-state="open"] {
+  animation-name: animate-in;
+  animation-duration: 0.5s; 
+}
+
+.SheetContent[data-state="closed"] {
+  animation-name: animate-out;
+  animation-duration: 0.3s; 
+}
+
+.SheetTop {
+  position: fixed;
+  inset-inline-start: 0; 
+  top: 0;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+.SheetTop[data-state="closed"] {
+  animation-name: slide-out-to-top;
+  animation-duration: 0.3s;
+}
+
+.SheetTop[data-state="open"] {
+  animation-name: slide-in-from-top;
+  animation-duration: 0.3s;
+}
+
+.SheetBottom {
+  position: fixed;
+  inset-inline-start: 0; 
+  bottom: 0;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.SheetBottom[data-state="closed"] {
+  animation-name: slide-out-to-bottom;
+  animation-duration: 0.3s; 
+}
+
+.SheetBottom[data-state="open"] {
+  animation-name: slide-in-from-bottom;
+  animation-duration: 0.3s; 
+}
+
+.SheetLeft {
+  position: fixed;
+  inset-block-start: 0; 
+  left: 0;
+  height: 100vh; 
+  width: 75%; 
+  max-width: 320px; 
+  border-right: 1px solid hsl(var(--border));
+}
+
+.SheetLeft[data-state="closed"] {
+  animation-name: slide-out-to-left;
+  animation-duration: 0.3s; 
+}
+
+.SheetLeft[data-state="open"] {
+  animation-name: slide-in-from-left;
+  animation-duration: 0.3s; 
+}
+
+.SheetRight {
+  position: fixed;
+  inset-block-start: 0; 
+  right: 0;
+  height: 100vh; 
+  width: 75%;
+  max-width: 320px;
+  border-left: 1px solid hsl(var(--border)); 
+}
+
+.SheetRight[data-state="closed"] {
+  animation-name: slide-out-to-right;
+  animation-duration: 0.3s; 
+}
+
+.SheetRight[data-state="open"] {
+  animation-name: slide-in-from-right;
+  animation-duration: 0.3s; 
+}
+
+.SheetContentClose {
+  position: absolute;
+  right: 1rem; 
+  top: 1rem; 
+  border-radius: 0.25rem;
+  opacity: 0.7; 
+  transition: opacity 0.3s; 
+  outline: none; 
+}
+
+.SheetContentClose:hover {
+  opacity: 1; 
+}
+
+.SheetContentClose:focus {
+  box-shadow: 0 0 0 2px hsl(var(--ring)), 0 0 0 4px hsl(var(--ring) / 0.50);
+}
+
+.SheetContentClose:disabled {
+  pointer-events: none; 
+}
+
+.SheetContentClose[data-state="open"] {
+  background-color: hsl(var(--secondary-color)); 
+}
+
+.SheetHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .SheetHeader {
+    text-align: left; 
+  }
+}
+
+.SheetFooter {
+  display: flex;
+  flex-direction: column-reverse; 
+}
+
+@media (min-width: 640px) {
+  .SheetFooter {
+    flex-direction: row; 
+    justify-content: flex-end; 
+    gap: 0.5rem; 
+  }
+}
+
+.SheetTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--foreground)); 
+}
+
+.SheetDescription {
+  font-size: 0.875rem; 
+  color: hsl(var(--muted-foreground));
+}
+
+

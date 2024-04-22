@@ -1,0 +1,73 @@
+.AccordionPrimitiveTrigger {
+  border: none;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 1rem 0;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 1rem;
+} 
+
+@media (max-width: 768px) {
+  .AccordionPrimitiveTrigger {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+
+.AccordionPrimitiveTrigger:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.AccordionItem {
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+/* for accordian */
+@keyframes accordian-down {
+  from {
+    height: 0;
+  } to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordian-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  } to {
+    height: 0;
+  }
+}
+
+.AccordionPrimitiveContent {
+  padding: 0;
+  overflow: hidden; 
+  font-size: 0.875rem;
+}
+
+ .AccordionPrimitiveContent[data-state="open"] {
+    animation: accordian-down 0.3s forwards;
+  }
+
+.AccordionPrimitiveContent[data-state="closed"] {
+    animation: accordian-up 0.3s forwards; 
+}
+
+.ChevronDownIcon {
+  height: 1rem; 
+  width: 1rem; 
+  flex-shrink: 0;
+  color: var(--muted-foreground);
+  transition-property: transform; 
+  transition-duration: 0.2s;
+}
+
+.AccordionContentDiv {
+  padding-bottom: 1rem;
+  padding-top: 0;
+}

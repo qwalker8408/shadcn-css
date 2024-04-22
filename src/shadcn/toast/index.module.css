@@ -1,0 +1,31 @@
+.Toast {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 1rem; 
+  border-radius: 0.375rem; 
+  background-color: hsl(var(--background)); 
+  color: hsl(var(--foreground)); 
+  border: 1px solid hsl(var(--border)); 
+  box-shadow: 0 4px 6px hsl(var(--background) / 0.10);
+  transition: box-shadow 0.3s ease; 
+}
+
+.Toast:hover {
+  box-shadow: 0 6px 12px hsl(var(--background) / 0.15); 
+}
+
+.ToastDescription {
+  color: hsl(var(--muted-foreground));
+}
+
+.ToastActionButton {
+  background-color: hsl(var(--bg-primary)); 
+  color: hsl(var(--primary-foreground)); 
+}
+
+.ToastCancelButton {
+  background-color: hsl(var(--muted));
+  color: hsl(var(--muted-foreground));
+}
+

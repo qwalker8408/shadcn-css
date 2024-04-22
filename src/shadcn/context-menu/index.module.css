@@ -1,0 +1,188 @@
+.ContextMenuSubTrigger {
+  display: flex; 
+  cursor: default; 
+  user-select: none; 
+  align-items: center;
+  border-radius: 0.375rem; 
+  padding-left: 0.5rem; 
+  padding-right: 0.5rem; 
+  padding-top: 0.9375rem; 
+  padding-bottom: 0.9375rem; 
+  font-size: 0.875rem; 
+  outline: none; 
+}
+
+.ContextMenuSubTrigger:focus {
+  background-color: hsl(var(--accent)); 
+  color: hsl(var(--accent-foreground));
+}
+
+.ContextMenuSubTrigger[data-state="open"] {
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}
+
+
+/* Define the CSS selector */
+.ContextMenuSubContent {
+    z-index: 50; 
+    min-width: 8rem; 
+    overflow: hidden; 
+    border-radius: 0.375rem; 
+    border: 1px solid hsl(var(--border)); 
+    background-color: hsl(var(--background)); 
+    padding: 0.25rem; 
+    color: hsl(var(--foreground)); 
+    box-shadow: 0 1px 3px hsl(var(--background) / 0.10), 0 1px 2px hsl(var(--background) / 0.0.6); 
+}
+
+.ContextMenuSubContent[data-state="open"] {
+    animation: animate-in 0.3s ease-in-out;
+}
+
+.ContextMenuSubContent[data-state="closed"] {
+    animation: animate-out 0.3s ease-in-out; 
+}
+
+.ContextMenuContent {
+    z-index: 50; 
+    min-width: 8rem; 
+    border-radius: 0.375rem; 
+    border: 1px solid hsl(var(--border)); 
+    background-color: hsl(var(--background)); 
+    padding: 0.25rem; 
+    color: hsl(var(--foreground)); 
+    box-shadow: 0 1px 3px hsl(var(--background) / 0.10), 0 1px 2px hsl(var(--background) / 0.0.6); 
+    opacity: 0; 
+    animation: fade-in-80 0.3s ease-in-out forwards; 
+}
+
+@keyframes fade-in-80 {
+    from {
+        opacity: 0;
+        transform: translateY(-10px); 
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); 
+    }
+}
+
+.ContextMenuItem {
+  position: relative;
+  display: flex; 
+  cursor: default; 
+  user-select: none; 
+  align-items: center; 
+  border-radius: 0.375rem;
+  padding-left: 0.5rem; 
+  padding-right: 0.5rem;
+  padding-top: 0.9375rem; 
+  padding-bottom: 0.9375rem; 
+  font-size: 0.875rem; 
+  outline: none;
+}
+
+.ContextMenuItem:focus {
+  background-color: hsl(var(--accent)); 
+  color: hsl(var(--accent-foreground)); 
+}
+
+/* Styles for disabled state */
+.ContextMenuItem[data-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5; 
+}
+
+.ContextMenuCheckboxItem {
+    position: relative; 
+    display: flex; 
+    cursor: default; 
+    user-select: none; 
+    align-items: center; 
+    border-radius: 0.375rem; 
+    padding-top: 0.9375rem; 
+    padding-bottom: 0.9375rem;
+    padding-left: 2rem;
+    padding-right: 0.5rem; 
+    font-size: 0.875rem; 
+    outline: none; 
+}
+
+.ContextMenuCheckboxItem:focus {
+    background-color: hsl(var(--accent)); 
+    color: hsl(var(--accent-foreground)); 
+}
+
+.ContextMenuCheckboxItem[data-disabled="true"] {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.ContextMenuCheckboxItemSpan {
+    position: absolute; 
+    left: 2px; 
+    display: flex; 
+    height: 3.5rem; 
+    width: 3.5rem; 
+    align-items: center;
+    justify-content: center; 
+}
+
+.ContextMenuRadioItem {
+  position: relative; 
+  display: flex; 
+  cursor: default; 
+  user-select: none; 
+  align-items: center; 
+  border-radius: 0.375rem; 
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem; 
+  padding-left: 2rem; 
+  padding-right: 0.5rem;
+  font-size: 0.875rem;
+  outline: none; 
+}
+
+.ContextMenuRadioItem:focus {
+  background-color: hsl(var(--accent)); 
+  color: hsl(var(--accent-foreground)); 
+}
+
+.ContextMenuRadioItem[data-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.ContextMenuRadioItemSpan {
+  position: absolute;
+  left: 2px;
+  display: flex; 
+  height: 3.5rem; 
+  width: 3.5rem; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.ContextMenuLabel {
+  padding: 0.9375rem 0.5rem;
+  font-size: 0.875rem; 
+  font-weight: 600;
+  color: hsl(var(--foreground)); 
+}
+
+.ContextMenuSeparator {
+  margin-left: -0.25rem; 
+  margin-right: -0.25rem; 
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem; 
+  height: 1px;
+  background-color: hsl(var(--background));
+}
+
+.ContextMenuShortcut {
+  margin-left: auto; 
+  font-size: 0.75rem; 
+  letter-spacing: 0.1em; 
+  color: hsl(var(--muted-foreground));
+}

@@ -1,0 +1,28 @@
+.Checkbox {
+  height: 1rem; 
+  width: 1rem; 
+  flex-shrink: 0;
+  border-radius: 0.125rem; 
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.Checkbox:disabled {
+  cursor: not-allowed; 
+  opacity: 0.5;         
+}
+
+.Checkbox[data-state="checked"] {
+  background-color: hsl(var(--foreground));   
+  color: hsl(var(--background));   
+}
+
+.CheckboxIndicator {
+  display: flex;      
+  align-items: center;       
+  justify-content: center; 
+  color: currentColor;
+}

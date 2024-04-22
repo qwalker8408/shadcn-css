@@ -1,0 +1,16 @@
+.Progress {
+  position: relative; 
+  height: 1rem; 
+  width: 100%; 
+  overflow: hidden; 
+  border-radius: 9999px; 
+  background-color: hsl(var(--secondary)); 
+}
+
+.ProgressIndicator {
+  height: 100%; 
+  width: 100%; 
+  flex: 1;
+  background-color: hsl(var(--primary)); 
+  transition: all 0.3s ease; 
+}
