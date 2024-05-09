@@ -8,3 +8,7 @@
    font-weight: 500; 
    color: hsl(var(--destructive-foreground));
 }
+
+.FormLabel {
+  color: hsl(var(--foreground));
+}

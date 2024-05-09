@@ -5,10 +5,10 @@
   white-space: nowrap;
   border-radius: 0.375rem; 
   font-size: 0.875rem; 
-  font-weight: 500;
+  font-weight: 600;
   outline: none;
-  background-color: hsl(var(--foreground));
-  color: hsl(var(--background)); 
+  background-color: hsl(var(--primary));
+  color: white; 
   border: 0.0375rem solid hsl(var(--border) / 0.8);
   transition: background-color 0.2s ease;
   height: 2.5rem; 
@@ -77,14 +77,16 @@
   background-color: transparent; 
   border: 1px solid transparent;
   color: hsl(var(--foreground));
+  display: flex;
+  align-items: center;
 }
 
 .Button[data-variant='ghost']:hover {
-   background-color: hsl(var(--secondary) / 0.8);
+   background-color: hsl(var(--foreground) / 0.1);
 }
 
 .Button[data-variant='link'] {
-  color: hsl(var(--foregound)); 
+  color: hsl(var(--foreground)); 
   background-color: transparent;
   text-decoration: underline;
   text-underline-offset: 0.25rem; 
@@ -92,12 +94,28 @@
   border: none;
   padding: 0;
   height: max-content;
+  width: max-content;
 }
 
 .Button[data-variant='link']:hover {
-   color: hsl(var(--foreground) / 0.90); 
+   color: hsl(var(--foreground) / 0.60); 
    text-decoration-color: hsl(var(--foreground));
 }
+
+.Button[data-variant='icon'] {
+  background-color: hsl(var(--accent)); 
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 50%;
+}
+
+.Button[data-variant='icon']:hover {
+   background-color: hsl(var(--accent) / 0.8);
+}
+
 
 /* sizing */
 .Button[data-size='sm'] {

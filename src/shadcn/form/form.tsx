@@ -11,7 +11,7 @@ import {
   FormProvider as HookFormProvider,
   useFormContext,
 } from "react-hook-form"
-import { Label } from '@/components';
+import { Label } from '@/shadcn';
 import styles from './index.module.css'
 
 const FormProvider = HookFormProvider
@@ -79,25 +79,34 @@ const FormItem = React.forwardRef<
 
   return (
     <FormItemContext.Provider value={{ id }}>
-      <div ref={ref} style={{ padding: '0.5rem' }} {...props} />
+      <div ref={ref} style={{ padding: '0.5rem 0' }} {...props} />
     </FormItemContext.Provider>
   )
 })
 FormItem.displayName = "FormItem"
 
+const getFriendlyName = (labelName: string) => {
+  const words = labelName.split(/[_-]|(?=[A-Z])/); // Split by underscore, hyphen, or before uppercase letters
+  const firstWord = words[0].charAt(0).toUpperCase() + words[0].slice(1);
+  const result = [firstWord, ...words.slice(1)].join(' ');
+  return result;
+};
+
 const FormLabel = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ ...props }, ref) => {
+>(({ children, ...props }, ref) => {
   const { error, formItemId } = useFormField()
 
   return (
     <Label
       ref={ref}
-      className={error && "text-destructive"}
+      className={`${styles.FormLabel} ${error && "text-destructive"}`}
       htmlFor={formItemId}
       {...props}
-    />
+    >
+      {typeof children === 'string' ? getFriendlyName(children) : children}
+    </Label>
   )
 })
 FormLabel.displayName = "FormLabel"

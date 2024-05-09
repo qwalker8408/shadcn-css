@@ -5,7 +5,6 @@
     border-radius: 0.375rem;
     border: 1px solid hsl(var(--border));
     background-color: hsl(var(--background));
-    padding-left: 0.75rem; 
     padding-right: 0.75rem; 
     padding-top: 0.5rem; 
     padding-bottom: 0.5rem; 
@@ -14,6 +13,19 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     color: hsl(var(--foreground));
     font-weight: 500;
+    max-width: 30rem;;
+}
+
+.Input:focus {
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
+}
+
+.Input:-webkit-autofill {
+  background-color: hsl(var(--background));
+  border: 1px solid hsl(var(--border));
+  color: hsl(var(--foreground));
 }
 
 .Input::placeholder {

@@ -4,7 +4,7 @@ import styles from './index.module.css'
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   asChild?: boolean;
-  variant?: 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+  variant?: 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link' | 'icon'
   size?: 'sm' | 'lg' | 'icon'
 }
 

@@ -1,3 +1,137 @@
+/* animations */
+@keyframes zoom-in {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes animate-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes animate-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes enter {
+  0% {
+    opacity: var(--tw-enter-opacity, 1);
+    transform: translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0) scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1)) rotate(var(--tw-enter-rotate,0))
+  } 
+}
+
+@keyframes exit {
+  to {
+      opacity: var(--tw-exit-opacity, 0);
+      transform: translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0) scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1)) rotate(var(--tw-exit-rotate,0))
+  }
+}
+
+@keyframes slide-in-from-top {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-from-right {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-from-left {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-from-bottom {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-out-to-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-0.5rem);
+    }
+}
+
+@keyframes slide-out-to-top-2 {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-0.5rem);
+    }
+}
+
+@keyframes slide-in-from-top-2 {
+    from {
+        transform: translateY(-0.5rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-from-right-2 {
+    from {
+        transform: translateX(0.5rem);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-from-left-2 {
+    from {
+        transform: translateX(-0.5rem);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-from-bottom {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* selectors */
+
 .NavigationMenu {
   position: relative; 
   z-index: 10;
@@ -16,6 +150,7 @@
     justify-content: center; 
     margin-left: -0.25rem; 
     margin-right: -0.25rem; 
+    padding-left: 0;
 }
 
 .NavigationMenuList > * {
@@ -29,10 +164,11 @@
     margin-left: 0.25rem; 
     height: 0.75rem; 
     width: 0.75rem; 
-    transition-duration: 0.2s; 
+    transition: transform 1s;
 }
 
 .NavigationMenuTriggerChevronDown[data-state="open"] {
+    transform-origin: 50% 50%;
     transform: rotate(180deg);
 }
 
@@ -82,12 +218,10 @@
     left: 0; 
     top: 100%; 
     display: flex; 
-    justify-content: center; 
 }
 
 .NavigationMenuViewport {
-    position: relative; 
-    margin-top: 1.5rem; 
+    position: relative;
     height: var(--radix-navigation-menu-viewport-height); 
     width: 100%; 
     overflow: hidden; 
@@ -99,11 +233,11 @@
 }
 
 .NavigationMenuViewport[data-state="open"] {
-    animation: animate-in 0.3s ease forwards;
+    animation: enter 0.3s forwards;
 }
 
 .NavigationMenuViewport[data-state="closed"] {
-    animation: animate-out 0.3s ease forwards;
+    animation: exit 0.3s forwards;
 }
 
 @media (min-width: 768px) {
@@ -150,13 +284,15 @@
     align-items: center; 
     justify-content: center; 
     border-radius: 0.375rem; 
-    background-color: var(--background); 
+    color: hsl(var(--foreground)); 
+    background-color: transparent; 
     padding: 0.5rem 1rem; 
     font-size: 0.875rem; 
     font-weight: 500; 
     transition: background-color 0.3s ease, color 0.3s ease; 
     cursor: pointer; 
     outline: none; 
+    border: none;
 }
 
 .NavigationMenuTrigger:hover {

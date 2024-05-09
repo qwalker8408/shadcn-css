@@ -7,6 +7,12 @@
   align-items: center; 
 }
 
+.Slider[data-orientation='vertical'] {
+  flex-direction: column;
+  width: 20px;
+  height: 100px;
+}
+
 .SliderTrack {
   position: relative; 
   height: 2px; 
@@ -14,7 +20,11 @@
   flex-grow: 1; 
   overflow: hidden; 
   border-radius: 9999px; 
-  background-color: hsl(var(--secondary)); 
+  background-color: hsl(var(--foreground)); 
+}
+
+.SliderTrack[data-orientation='vertical'] {
+  width: 3px;
 }
 
 .SliderRange {
@@ -23,13 +33,17 @@
   background-color: hsl(var(--primary)); 
 }
 
+.SliderRange[data-orientation='vertical'] {
+  width: 100%;
+}
+
 .SliderThumb {
   display: block; 
   height: 1.25rem; 
   width: 1.25rem; 
   border-radius: 9999px; 
-  border: 2px solid hsl(var(--primary-color)); 
-  background-color: hsl(var(--background-color)); 
+  border: 2px solid hsl(var(--accent)); 
+  background-color: hsl(var(--accent)); 
   outline: none; 
   transition-property: color, background-color, border-color; 
   transition-duration: 0.3s; 

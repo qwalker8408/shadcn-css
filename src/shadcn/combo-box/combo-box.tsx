@@ -13,7 +13,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger
-} from "@/components"
+} from "@/shadcn"
 
 const frameworks = [
   {

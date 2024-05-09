@@ -1,6 +1,7 @@
 .Separator {
   flex-shrink: 0;
   background-color: hsl(var(--border)); 
+  position: relative;
 }
 
 .SeparatorHorizontal {
@@ -11,4 +12,20 @@
 .SeparatorVertical {
   height: 100%; 
   width: 1px;
+}
+              
+.SeperatorText {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  width: max-content;
+  height: max-content;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
 }

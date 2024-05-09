@@ -1,6 +1,6 @@
 .AccordionPrimitiveTrigger {
-  border: none;
-  background-color: hsl(var(--background));
+  border-radius: var(--radius);
+  background-color: transparent;
   color: hsl(var(--foreground));
   display: flex;
   gap: 0.5rem;
@@ -9,6 +9,8 @@
   width: 100%;
   justify-content: space-between;
   font-size: 1rem;
+  white-space: no-wrap;
+  border: none;
 } 
 
 @media (max-width: 768px) {
@@ -45,6 +47,7 @@
 }
 
 .AccordionPrimitiveContent {
+  color: hsl(var(--foreground) / 0.70);
   padding: 0;
   overflow: hidden; 
   font-size: 0.875rem;

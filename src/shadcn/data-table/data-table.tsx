@@ -14,7 +14,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components"
+} from "@/shadcn"
 
 import styles from './index.module.css'
 

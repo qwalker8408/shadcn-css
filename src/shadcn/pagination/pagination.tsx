@@ -1,7 +1,7 @@
 import * as React from "react"
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
 
-import type { ButtonProps } from "@/components/button/button"
+import type { ButtonProps } from "@/shadcn/button/button"
 
 import styles from './index.module.css'
 

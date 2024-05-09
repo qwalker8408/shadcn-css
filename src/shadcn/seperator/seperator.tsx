@@ -5,12 +5,20 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator"
 
 import styles from "./index.module.css"
 
+interface SeperatorExtraProps {
+  text?: string
+}
+
 const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
 >(
   (
-    { orientation = "horizontal", decorative = true, ...props },
+    {
+      text = "",
+      orientation = "horizontal",
+      decorative = true,
+      ...props },
     ref
   ) => (
     <SeparatorPrimitive.Root
@@ -24,7 +32,9 @@ const Separator = React.forwardRef<
           ? styles.SeparatorHorizontal
           : styles.SeparatorVertical}`}
       {...props}
-    />
+    >
+      {text ? <div className={styles.SeperatorText}>{text}</div> : null}
+    </SeparatorPrimitive.Root>
   )
 )
 Separator.displayName = SeparatorPrimitive.Root.displayName

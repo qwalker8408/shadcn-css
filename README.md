@@ -56,7 +56,9 @@ In case you want to copy to an existing project, here are the packages required,
 "react-hook-form": "^7.51.3",
 "react-resizable-panels": "^2.0.16",
 "sonner": "^1.4.41",
-"vaul": "^0.9.0"
+"vaul": "^0.9.0",
+"yup": "^1.3.3",
+"class-variance-authority": "^0.7.0"
 `
 
 ## Getting Started with next.js

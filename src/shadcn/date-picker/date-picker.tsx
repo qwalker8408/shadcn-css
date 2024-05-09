@@ -10,7 +10,7 @@ import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components"
+} from "@/shadcn"
 
 import styles from './index.module.css'
 

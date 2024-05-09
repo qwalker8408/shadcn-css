@@ -9,11 +9,12 @@
   transition: color 0.3s, background-color 0.3s; 
   outline: none; 
   color: hsl(var(--foreground)); 
-  background-color: hsl(var(--background)); 
+  background-color: hsl(var(--background));
+  border: 1px solid transparent; 
 }
 
 .Toggle:hover {
-  background-color: hsl(var(--border)); 
+  background-color: hsl(var(--foreground) / 0.10); 
   color: hsl(var(--foreground));
 }
 
