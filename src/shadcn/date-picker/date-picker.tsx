@@ -1,8 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { format } from "date-fns"
+import { format, addDays } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
+import { DateRange } from "react-day-picker"
 
 import {
   Button,
@@ -14,18 +15,27 @@ import {
 
 import styles from './index.module.css'
 
-export default function DatePicker() {
+export default function DatePicker({ isRange }: { isRange?: boolean }) {
+  const [dateRange, setDateRange] = React.useState<DateRange | undefined>(() => {
+    if (isRange) {
+      return {
+        from: new Date(),
+        to: addDays(new Date(), 1),
+      }
+    }
+    return undefined
+  })
   const [date, setDate] = React.useState<Date>()
 
   return (
     <Popover>
       <PopoverTrigger asChild>
         <Button
-          variant={"outline"}
+          variant={"ghost"}
           className={`
             ${styles.Button}
-            ${!date && "text-muted-foreground"}
           `}
+          style={{ display: 'flex', alignItems: 'center', background: 'transparent', border: 'none', padding: 0, justifyContent: 'center' }}
         >
           <CalendarIcon style={{
             marginRight: '0.5rem',
@@ -33,7 +43,18 @@ export default function DatePicker() {
             width: '1rem'
           }}
           />
-          {date ? format(date, "PPP") : <span>Pick a date</span>}
+          {isRange ? (
+            dateRange?.to ? (
+              <>
+                {format(dateRange.from, "LLL dd, y")} -{" "}
+                {format(dateRange.to, "LLL dd, y")}
+              </>
+            ) : (
+              format(dateRange.from, "LLL dd, y")
+            )
+          ) : (
+            <span>{date ? format(date, "PPP") : `Pick a date`}</span>
+          )}
         </Button>
       </PopoverTrigger>
       <PopoverContent
@@ -42,10 +63,12 @@ export default function DatePicker() {
           padding: 0
         }}>
         <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          initialFocus
+          // initialFocus
+          defaultMonth={isRange ? date?.from : date}
+          mode={isRange ? "range" : "single"}
+          selected={isRange ? dateRange : date}
+          onSelect={isRange ? setDateRange : setDate}
+          numberOfMonths={isRange ? 2 : 1}
         />
       </PopoverContent>
     </Popover>

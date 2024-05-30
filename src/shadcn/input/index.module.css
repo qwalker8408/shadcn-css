@@ -13,7 +13,8 @@
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     color: hsl(var(--foreground));
     font-weight: 500;
-    max-width: 30rem;;
+    max-width: 30rem;
+    padding-left: 0.5rem;
 }
 
 .Input:focus {
@@ -41,4 +42,17 @@
 .Input:disabled {
     cursor: not-allowed;
     opacity: 0.5;
+}
+
+.passwordButton {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right:0;
+  bottom: 0;
+  margin:auto;
+  margin-right: 0.5rem;
+  z-index: 2;
 }

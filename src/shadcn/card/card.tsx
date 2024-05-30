@@ -4,10 +4,10 @@ import styles from './index.module.css'
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={styles.Card}
+    className={`${styles.Card} ${className}`}
     {...props}
   />
 ))

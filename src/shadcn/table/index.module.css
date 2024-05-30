@@ -11,6 +11,7 @@
 }
 
 .TableHeader {
+  background-color: hsl(var(--foreground) / 0.10); 
   border-bottom: 1px solid hsl(var(--border)); 
 }
 
@@ -19,11 +20,11 @@
 }
 
 .TableFooter {
-  border-top: 1px solid hsl(var(--border));
+  border-top: 1px solid hsl(var(--foreground) / 0.10);
 }
 
 .TableFooter tr {
-    background-color: hsl(var(--muted) / 0.50); 
+    background-color: hsl(var(--foreground) / 0.10); 
     font-weight: 500; 
 }
 
@@ -40,7 +41,7 @@
 }
 
 .TableRow:hover {
-    background-color: hsl(var(--muted) / 0.50); 
+    background-color: hsl(var(--foreground) / 0.01); 
 }
 
 .TableRow[data-state="selected"] {
@@ -54,7 +55,7 @@
   text-align: left; 
   vertical-align: middle; 
   font-weight: 500;
-  color: hsl(var(--muted-foreground)); 
+  color: hsl(var(--foreground)); 
 }
 
 .TableCell {
@@ -72,4 +73,12 @@
     margin-top: 1rem; 
     font-size: 0.875rem; 
     color: hsl(var(--muted-foreground)); 
+}
+
+
+@media (max-width: 768px) {
+  .TableHead {
+    height: max-content;
+    padding: 4px;
+  }
 }

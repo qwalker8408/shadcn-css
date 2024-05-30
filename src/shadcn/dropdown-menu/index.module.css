@@ -71,6 +71,7 @@
     border: 1px solid hsl(var(--border)); 
     background-color: hsl(var(--background)); 
     padding: 0.25rem; 
+    padding-left: 1rem;
     color: hsl(var(--foreground)); 
     box-shadow: 0 4px 6px hsl(var(--background) / 0.50); 
 }
@@ -194,12 +195,9 @@
 }
 
 .DropdownMenuSeparator {
-    margin-left: -0.25rem;
-    margin-right: -0.25rem; 
-    margin-top: -0.25rem; 
-    margin-bottom: -0.25rem; 
+    width: 100%;
     height: 1px;
-    background-color: hsl(var(--background)); 
+    background-color: hsl(var(--foreground) / 0.10); 
 }
 
 .DropdownMenuShortcut {

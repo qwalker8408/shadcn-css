@@ -6,6 +6,7 @@
 .FormMessage {
    font-size: 0.875rem; 
    font-weight: 500; 
+   transform: translateY(4px);
    color: hsl(var(--destructive-foreground));
 }
 

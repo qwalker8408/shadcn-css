@@ -21,7 +21,7 @@
 
 .Button:hover {
   cursor: pointer;
-  background-color: hsl(var(--foreground) / 0.9);
+  background-color: hsl(var(--primary) / 0.91);
   transition: background-color 0.2s ease;
 }
 
@@ -88,8 +88,7 @@
 .Button[data-variant='link'] {
   color: hsl(var(--foreground)); 
   background-color: transparent;
-  text-decoration: underline;
-  text-underline-offset: 0.25rem; 
+  text-decoration: none;
   transition: text-decoration 0.2s ease;
   border: none;
   padding: 0;
@@ -98,18 +97,21 @@
 }
 
 .Button[data-variant='link']:hover {
-   color: hsl(var(--foreground) / 0.60); 
+   color: hsl(var(--primary)); 
    text-decoration-color: hsl(var(--foreground));
 }
 
 .Button[data-variant='icon'] {
-  background-color: hsl(var(--accent)); 
+  background-color: hsl(var(--foreground)); 
   border: none;
-  color: white;
+  color: hsl(var(--background));
   display: flex;
   align-items: center;
-  padding: 1rem;
-  border-radius: 50%;
+  justify-content: center;
+  height: 2rem;
+  width: 2rem;
+  padding: 0;
+  border-radius: 9999px;
 }
 
 .Button[data-variant='icon']:hover {

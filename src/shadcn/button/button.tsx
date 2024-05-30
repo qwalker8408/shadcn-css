@@ -11,11 +11,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    const { className } = props
     return (
       <Comp
         data-size={size}
         data-variant={variant}
-        className={styles.Button}
+        className={`${styles.Button} ${className}`}
         ref={ref}
         {...props}
       />

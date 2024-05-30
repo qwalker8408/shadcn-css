@@ -28,7 +28,8 @@
 }
 
 .Toggle[data-state="on"] {
-  background-color: hsl(var(--accent)); 
+  text-decoration: underline;
+  text-underline-offset: 4px;
   color: hsl(var(--accent-foreground)); 
 }
 
