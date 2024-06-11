@@ -52,6 +52,6 @@
 }
 
 .AlertDialogDescription {
-  color: hsl(var(--muted-foreground));
+  color: hsl(var(--foreground) / 0.90);
   font-size: 0.875rem;
 }

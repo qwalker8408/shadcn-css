@@ -88,10 +88,11 @@ AlertDialogDescription.displayName =
 const AlertDialogAction = React.forwardRef<
   React.ElementRef<typeof AlertDialogPrimitive.Action>,
   React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Action>
->(({ ...props }, ref) => (
+// eslint-disable-next-line react/prop-types
+>(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Action
     ref={ref}
-    className={buttonStyles.Button}
+    className={`${buttonStyles.Button} ${className}`}
     {...props}
   />
 ))

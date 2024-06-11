@@ -6,17 +6,15 @@
   cursor: pointer; 
   align-items: center; 
   justify-content: center; 
-  border: 2px solid transparent; 
+  border: 1px solid transparent; 
   border-radius: 9999px; 
   transition-property: background-color, border-color; 
   transition-duration: 0.3s; 
   outline: none; 
+  padding: 0;
+  background-color: hsl(var(--background));
 }
 
-.Switch:focus-visible {
-  outline: none; 
-  box-shadow: 0 0 0 2px hsl(var(--ring)), 0 0 0 4px hsl(var(--ring));
-}
 
 .Switch:disabled {
   cursor: not-allowed; 
@@ -24,7 +22,7 @@
 }
 
 .Switch[data-state="checked"] {
-  background-color: hsl(var(--primary));
+  background-color: hsl(var(--accent-foreground));
 }
 
 .Switch[data-state="unchecked"] {
@@ -37,11 +35,12 @@
   height: 1.25rem; 
   width: 1.25rem; 
   border-radius: 50%; 
-  background-color: var(--background-color); 
+  background-color: hsl(var(--background)); 
   box-shadow: 0 1px 3px hsl(var(--background) / 0.50); 
   outline: none; 
   transition-property: transform; 
   transition-duration: 0.3s; 
+  padding: 0;
 }
 
 .SwitchThumb[data-state="checked"] {

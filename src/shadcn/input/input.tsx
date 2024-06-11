@@ -24,9 +24,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       return (
         <div style={{ position: 'relative', width: 'max-content' }}>
           <input
+            ref={ref}
             type={type}
             className={styles.Input}
-            ref={ref}
             {...props}
           />
           {type === 'password' ? (
@@ -44,9 +44,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <input
+        ref={ref}
         type={type}
         className={styles.Input}
-        ref={ref}
         {...props}
 
       />

@@ -41,7 +41,7 @@ const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ ...props }, ref) => (
-  <p
+  <div
     ref={ref}
     className={styles.CardDescription}
     {...props}
