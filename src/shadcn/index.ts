@@ -94,6 +94,7 @@ export {
   CommandShortcut,
   CommandSeparator,
 } from './command/command'
+export { default as ComboBox } from './combo-box/combo-box'
 export {
   ContextMenu,
   ContextMenuTrigger,

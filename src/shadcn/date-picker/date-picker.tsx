@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { format, addDays } from "date-fns"
-import { Calendar as CalendarIcon } from "lucide-react"
+import { Calendar as CalendarIcon, ChevronDown } from "lucide-react"
 import { DateRange } from "react-day-picker"
 
 import {
@@ -35,7 +35,15 @@ export default function DatePicker({ isRange }: { isRange?: boolean }) {
           className={`
             ${styles.Button}
           `}
-          style={{ display: 'flex', alignItems: 'center', background: 'transparent', border: 'none', padding: 0, justifyContent: 'center' }}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            background: 'transparent',
+            border: 'none',
+            padding: 0,
+            justifyContent: 'center',
+            width: 'max-content'
+          }}
         >
           <CalendarIcon style={{
             marginRight: '0.5rem',
@@ -53,7 +61,10 @@ export default function DatePicker({ isRange }: { isRange?: boolean }) {
               format(dateRange.from, "LLL dd, y")
             )
           ) : (
-            <span>{date ? format(date, "PPP") : `Pick a date`}</span>
+            <>
+              <span>{date ? format(date, "PPP") : `Pick a date`}</span>
+              <ChevronDown color="currentColor" size="1rem" />
+            </>
           )}
         </Button>
       </PopoverTrigger>

@@ -41,7 +41,7 @@ const ToggleGroupItem = React.forwardRef<
   React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item> &
   // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents
   VariantProps<typeof toggleVariants>
->(({ children, variant, size, ...props }, ref) => {
+>(({ children, className, variant, size, ...props }, ref) => {
   const context = React.useContext(ToggleGroupContext)
 
   return (
@@ -49,10 +49,12 @@ const ToggleGroupItem = React.forwardRef<
       ref={ref}
       className={
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-        toggleVariants({
+        `${className} 
+        ${toggleVariants({
           variant: context.variant ?? variant,
           size: context.size ?? size,
-        })
+        })}`
+
       }
       {...props}
     >

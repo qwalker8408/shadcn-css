@@ -39,28 +39,29 @@
 }
 
 .DropdownMenuSubTrigger[data-state="open"] {
-    background-color: hsl(var(--accent)); 
+    background-color: hsl(var(--foreground) / 0.1); 
 }
 
 .DropdownMenuSubContent {
     display: flex; 
+    flex-direction: column;
     cursor: default; 
     user-select: none; 
-    align-items: center; 
+    align-items: flex-start; 
+    justify-self: center;
     border-radius: 0.25rem; 
     padding-right: 0.5rem; 
-    padding-top: 0.375rem; 
-    padding-bottom: 0.375rem; 
     font-size: 0.875rem;
     outline: none; 
+    border: 1px solid hsl(var(--border));
 }
 
 .DropdownMenuSubContent:focus {
-    background-color: hsl(var(--foreground) / 0.10);
+    background-color: hsl(var(--background) / 0.10);
 }
 
 .DropdownMenuSubContent[data-state="open"] {
-    background-color: hsl(var(--foreground) / 0.10);
+    background-color: hsl(var(--background) / 0.10);
 }
 
 .DropdownMenuContent {
@@ -71,7 +72,6 @@
     border: 1px solid hsl(var(--border)); 
     background-color: hsl(var(--background)); 
     padding: 0.25rem; 
-    padding-left: 1rem;
     color: hsl(var(--foreground)); 
     box-shadow: 0 4px 6px hsl(var(--background) / 0.50); 
 }

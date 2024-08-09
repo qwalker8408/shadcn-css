@@ -12,33 +12,16 @@ import {
   Button,
   Popover,
   PopoverContent,
-  PopoverTrigger
+  PopoverTrigger,
+  CommandList
 } from "@/shadcn"
 
-const frameworks = [
-  {
-    value: "next.js",
-    label: "Next.js",
-  },
-  {
-    value: "sveltekit",
-    label: "SvelteKit",
-  },
-  {
-    value: "nuxt.js",
-    label: "Nuxt.js",
-  },
-  {
-    value: "remix",
-    label: "Remix",
-  },
-  {
-    value: "astro",
-    label: "Astro",
-  },
-]
+type comboxBoxType = {
+  value: string,
+  label: string,
+}
 
-export function ComboboxDemo() {
+export default function Combobox({ data, label = 'item', onSelect }: { data: comboxBoxType[], label: string, onSelect: (selected: Record<string, unknown>) => void }) {
   const [open, setOpen] = React.useState(false)
   const [value, setValue] = React.useState("")
 
@@ -46,42 +29,44 @@ export function ComboboxDemo() {
     <Popover open={open} onOpenChange={setOpen}>
       <PopoverTrigger asChild>
         <Button
-          variant="outline"
+          variant="ghost"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
         >
           {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : "Select framework..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+            ? data.find((item) => item.value === value)?.label
+            : `${label}`}
+          <ChevronsUpDown size="1rem" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[200px] p-0">
+      <PopoverContent style={{ width: 200, padding: 0 }}>
         <Command>
-          <CommandInput placeholder="Search framework..." />
-          <CommandEmpty>No framework found.</CommandEmpty>
+          <CommandInput placeholder={`${label}`} />
+          <CommandEmpty>Not found.</CommandEmpty>
           <CommandGroup>
-            {frameworks.map((framework) => (
-              <CommandItem
-                key={framework.value}
-                value={framework.value}
-                onSelect={(currentValue) => {
-                  setValue(currentValue === value ? "" : currentValue)
-                  setOpen(false)
-                }}
-              >
-                <Check
-                  style={{
-                    marginRight: '0.5rem',
-                    height: '1rem',
-                    width: '1rem',
-                    opacity: value === framework.value ? 1 : 0
+            <CommandList>
+              {data.map((item) => (
+                <CommandItem
+                  key={item.value}
+                  value={item.value}
+                  onSelect={(currentValue) => {
+                    setValue(currentValue === value ? "" : currentValue)
+                    setOpen(false)
+                    onSelect(item)
                   }}
-                />
-                {framework.label}
-              </CommandItem>
-            ))}
+                >
+                  <Check
+                    style={{
+                      marginRight: '0.5rem',
+                      height: '1rem',
+                      width: '1rem',
+                      opacity: value === item.value ? 1 : 0
+                    }}
+                  />
+                  {item.label}
+                </CommandItem>
+              ))}
+            </CommandList>
           </CommandGroup>
         </Command>
       </PopoverContent>

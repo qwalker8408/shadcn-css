@@ -15,7 +15,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       <Comp
         data-size={size}
         data-variant={variant}
-        className={`${styles.Button} ${className}`}
+        className={`${styles.Button} ${className ? className : ''}`}
         ref={ref}
         {...props}
       />

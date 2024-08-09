@@ -45,7 +45,11 @@
 }
 
 .TableRow[data-state="selected"] {
-    background-color: hsl(var(--muted));
+  background-color: hsl(var(--accent) / 0.40);
+
+  &:nth-child(odd) {
+    background-color: hsl(var(--accent) / 0.40);
+  }
 }
 
 .TableHead {

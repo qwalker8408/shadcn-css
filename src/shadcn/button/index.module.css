@@ -21,7 +21,7 @@
 
 .Button:hover {
   cursor: pointer;
-  background-color: hsl(var(--primary) / 0.91);
+  background-color: hsl(var(--primary) / 0.8);
   transition: background-color 0.2s ease;
 }
 

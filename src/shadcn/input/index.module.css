@@ -35,8 +35,8 @@
 
 .Input:focus-visible {
     outline: none;
-    border-color: hsl(var(--ring)); 
-    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.50);
+    border-color: hsl(var(--ring) / 0.70); 
+    box-shadow: 0 0 0 2px hsl(var(--ring) / 0.10);
 }
 
 .Input:disabled {

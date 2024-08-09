@@ -28,7 +28,7 @@ const DropdownMenuSubTrigger = React.forwardRef<
     ref={ref}
     className={styles.DropdownMenuSubTrigger}
     style={{
-      paddingLeft: inset ? '0.5rem' : '2rem'
+      paddingLeft: inset ? '2rem' : '0.5rem'
     }}
     {...props}
   >

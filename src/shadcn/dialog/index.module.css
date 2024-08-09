@@ -1,132 +1,13 @@
-@keyframes zoom-in {
-    from { transform: scale(0.9); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-@keyframes animate-in {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-@keyframes animate-out {
-    from {
-        opacity: 1;
-        transform: scale(1);
-    }
-    to {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-}
-
 @keyframes enter {
   0% {
     opacity: var(--tw-enter-opacity, 1);
-    transform: translate3d(var(--tw-enter-translate-x,0),var(--tw-enter-translate-y,0),0) scale3d(var(--tw-enter-scale,1),var(--tw-enter-scale,1),var(--tw-enter-scale,1)) rotate(var(--tw-enter-rotate,0))
   } 
 }
 
 @keyframes exit {
   to {
       opacity: var(--tw-exit-opacity, 0);
-      transform: translate3d(var(--tw-exit-translate-x,0),var(--tw-exit-translate-y,0),0) scale3d(var(--tw-exit-scale,1),var(--tw-exit-scale,1),var(--tw-exit-scale,1)) rotate(var(--tw-exit-rotate,0))
   }
-}
-
-@keyframes slide-in-from-top {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes slide-in-from-right {
-    from {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slide-in-from-left {
-    from {
-        transform: translateX(-100%);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slide-in-from-bottom {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes slide-out-to-left {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-0.5rem);
-    }
-}
-
-@keyframes slide-out-to-top-2 {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-0.5rem);
-    }
-}
-
-@keyframes slide-in-from-top-2 {
-    from {
-        transform: translateY(-0.5rem);
-    }
-    to {
-        transform: translateY(0);
-    }
-}
-
-@keyframes slide-in-from-right-2 {
-    from {
-        transform: translateX(0.5rem);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slide-in-from-left-2 {
-    from {
-        transform: translateX(-0.5rem);
-    }
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slide-in-from-bottom {
-    from {
-        transform: translateY(100%);
-    }
-    to {
-        transform: translateY(0);
-    }
 }
 
 .DialogOverlay {
@@ -136,15 +17,15 @@
     bottom: 0;
     left: 0;
     z-index: 50;
-    background-color: hsl(var(--background) / 0.80);
+    background-color: hsl(var(--background) / 0.60);
 }
 
 .DialogOverlay[data-state="open"] {
-  animation: enter 1s;
+  animation: enter 1s forwards;
 }
 
 .DialogOverlay[data-state="closed"] {
-  animation: exit 1s;
+  animation: exit 1s forwards;
 }
 
 .DialogContent {
@@ -157,19 +38,18 @@
     max-width: 32rem;
     transform: translate(-50%, -50%); 
     gap: 1rem; 
-    border-width: 1px; 
+    border-radius: var(--radius); 
     background-color: hsl(var(--background)); 
     padding: 1.5rem; 
-    box-shadow: 0 4px 12px hsl(var(--background) / 0.15);
-    transition-duration: 0.2s;
+    box-shadow: -1px -1px 6px hsl(var(--foreground) / 0.80);
 }
 
 .DialogContent[data-state="open"] {
-  animation: enter 1s;
+  animation: enter 1s forwards;
 }
 
 .DialogContent[data-state="closed"] {
-  animation: exit 1s;
+  animation: exit 1s forwards;
 }
 
 .DialogContentClose {
@@ -215,6 +95,7 @@
 .DialogFooter {
   display: flex;
   flex-direction: column-reverse;
+  gap: 0.5rem;
 }
 
 @media (min-width: 640px) {
@@ -234,5 +115,5 @@
 
 .DialogDescription {
   font-size: 0.875rem; /* Equivalent to text-sm in Tailwind (14px based on default root font size) */
-  color: hsl(var(--muted-foreground)); 
+  color: hsl(var(--foreground) / 0.90); 
 }

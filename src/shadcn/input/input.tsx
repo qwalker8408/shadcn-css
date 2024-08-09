@@ -10,7 +10,7 @@ export interface InputProps
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ type, onPasswordVisible, ...props }, ref) => {
+  ({ type, className, onPasswordVisible, ...props }, ref) => {
     const [isVisible, setIsVisible] = React.useState(false)
 
     function handlePasswordEye() {
@@ -26,7 +26,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <input
             ref={ref}
             type={type}
-            className={styles.Input}
+            className={`${styles.Input} ${className}`}
             {...props}
           />
           {type === 'password' ? (
@@ -46,7 +46,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       <input
         ref={ref}
         type={type}
-        className={styles.Input}
+        className={`${styles.Input} ${className}`}
         {...props}
 
       />

@@ -6,13 +6,11 @@ const Table = React.forwardRef<
   HTMLTableElement,
   React.HTMLAttributes<HTMLTableElement>
 >(({ ...props }, ref) => (
-  <div className={styles.TableDiv}>
-    <table
-      ref={ref}
-      className={styles.Table}
-      {...props}
-    />
-  </div>
+  <table
+    ref={ref}
+    className={styles.Table}
+    {...props}
+  />
 ))
 Table.displayName = "Table"
 
@@ -51,10 +49,10 @@ TableFooter.displayName = "TableFooter"
 const TableRow = React.forwardRef<
   HTMLTableRowElement,
   React.HTMLAttributes<HTMLTableRowElement>
->(({ ...props }, ref) => (
+>(({ className, ...props }, ref) => (
   <tr
     ref={ref}
-    className={styles.TableRow}
+    className={`${styles.TableRow} ${className}`}
     {...props}
   />
 ))
