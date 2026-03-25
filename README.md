@@ -1,3 +1,5 @@
+### ARCHIVED AND OUTDATED.
+
 ## shadcn/css
 
 An alternative approach using shadcn/ui with css modules, *no* tailwindcss. For the love of css.
